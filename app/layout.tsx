@@ -13,6 +13,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <nav>
           <Link href="/">トップ</Link>
+          <Link href="/csr">CSR</Link>
         </nav>
         <main>{children}</main>
       </body>
