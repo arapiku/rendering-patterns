@@ -12,6 +12,9 @@ export default function Home() {
         <li>
           <Link href="/csr">CSR</Link>: ブラウザで JS が中身を描画する
         </li>
+        <li>
+          <Link href="/ssr">SSR</Link>: リクエストのたびにサーバーで HTML を作る
+        </li>
       </ul>
     </>
   );
