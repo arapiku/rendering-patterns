@@ -15,6 +15,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Link href="/">トップ</Link>
           <Link href="/csr">CSR</Link>
           <Link href="/ssr">SSR</Link>
+          <Link href="/ssg">SSG</Link>
         </nav>
         <main>{children}</main>
       </body>

@@ -15,6 +15,9 @@ export default function Home() {
         <li>
           <Link href="/ssr">SSR</Link>: リクエストのたびにサーバーで HTML を作る
         </li>
+        <li>
+          <Link href="/ssg">SSG</Link>: ビルド時に HTML を作って置いておく
+        </li>
       </ul>
     </>
   );
