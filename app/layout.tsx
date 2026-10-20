@@ -19,6 +19,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Link href="/isr">ISR</Link>
           <Link href="/streaming">Streaming</Link>
           <Link href="/ppr">PPR</Link>
+          <Link href="/rsc/server">RSC</Link>
         </nav>
         <main>{children}</main>
       </body>

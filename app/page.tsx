@@ -27,6 +27,10 @@ export default function Home() {
         <li>
           <Link href="/ppr">PPR</Link>: 静的な殻を事前生成し、動的な穴だけをリクエスト時に流し込む
         </li>
+        <li>
+          RSC: 同じ変換を<Link href="/rsc/server">サーバーの部品</Link>と
+          <Link href="/rsc/client">クライアントの部品</Link>で行い、送られる JS を比べる
+        </li>
       </ul>
     </>
   );
