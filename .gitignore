@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# /ppr の価格を保存する、DB 代わりのファイル
+/.data/

@@ -24,6 +24,9 @@ export default function Home() {
         <li>
           <Link href="/streaming">Streaming</Link>: SSR の HTML を、できた部分から順に送る
         </li>
+        <li>
+          <Link href="/ppr">PPR</Link>: 静的な殻を事前生成し、動的な穴だけをリクエスト時に流し込む
+        </li>
       </ul>
     </>
   );

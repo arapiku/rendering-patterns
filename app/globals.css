@@ -62,3 +62,13 @@ button {
   font: inherit;
   padding: 4px 12px;
 }
+
+section {
+  margin: 24px 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+h2 {
+  font-size: 1rem;
+}
