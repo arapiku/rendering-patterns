@@ -163,3 +163,20 @@ Astro 7.4 と Vue 3 で作った、別のプロジェクトです。動かし方
 - ページは静的な HTML のままにして、`client:load` や `client:visible` を付けた部品（島）だけをハイドレーションします
 - 島のないページの JS は 0 です。島のあるページでも、Vue の本体を含めて gzip 約31KB です
 - Next.js は、文章だけのページでも土台の JS（gzip 約174KB）を送ります。動く部品がほとんどないサイトなら、Islands の方が送る JS をずっと減らせます
+
+## Resumability（`frameworks/qwik-resumability`）
+
+Qwik 1.20 で作った、別のプロジェクトです。動かし方と詳細は [frameworks/qwik-resumability/README.md](frameworks/qwik-resumability/README.md) にあります。
+
+- ハイドレーションをしません。ボタンの HTML には `on:click="q-xxx.js#s_xxx"` という「押されたら読み込む処理の住所」だけが入り、状態は `<script type="qwik/json">` に埋め込まれます
+- 読み込み時に実行される JS は約4KB（gzip）で、部品のコードは押されるまで実行されません
+- ただし、押したときに待たせないよう、Qwik の本体（gzip 19.7KB）などは先読みでダウンロードしています。減るのはダウンロードではなく、読み込み時の実行です
+
+## ステップ3のまとめ（読み込み時にブラウザで実行される JS）
+
+| 方式 | ページ | 実行される JS（gzip） |
+|---|---|---|
+| 全体のハイドレーション＋RSC（Next.js） | 文章とリンクだけのページ | 約174KB |
+| Islands（Astro） | 島のないページ | 0 |
+| Islands（Astro） | Vue の島があるページ | 約31KB |
+| Resumability（Qwik） | ボタンが1つのページ | 約4KB（ほかに約21KB を先読みで取得） |
