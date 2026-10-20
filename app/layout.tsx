@@ -16,6 +16,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Link href="/csr">CSR</Link>
           <Link href="/ssr">SSR</Link>
           <Link href="/ssg">SSG</Link>
+          <Link href="/isr">ISR</Link>
         </nav>
         <main>{children}</main>
       </body>

@@ -18,6 +18,9 @@ export default function Home() {
         <li>
           <Link href="/ssg">SSG</Link>: ビルド時に HTML を作って置いておく
         </li>
+        <li>
+          <Link href="/isr">ISR</Link>: SSG の HTML を、期限が過ぎたら裏で作り直す
+        </li>
       </ul>
     </>
   );
