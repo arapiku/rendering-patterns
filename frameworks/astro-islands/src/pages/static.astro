@@ -1,0 +1,13 @@
+---
+import Counter from "../components/Counter.vue";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="島のないページ">
+	<h1>島のないページ</h1>
+	<p>
+		Vue の部品を使っていますが、ハイドレーションの指定をしていません。
+		サーバーで HTML にするだけなので、このページには JS が1つも送られません。
+	</p>
+	<Counter label="指定なし" />
+</Layout>

@@ -155,3 +155,11 @@ EC サイトの商品ページを例に、4つの部分を置き分けていま�
 - サーバーの部品でライブラリを使っても、送られる JS は1バイトも増えません。トップページと同じです
 - 逆に、約174KB は React と Next.js の土台で、どのページにも必ず送られます。RSC で減らせるのは、この土台の上に乗る部品の分だけです
 - これまでのページもすべて RSC です。ハイドレーションされているのは、`"use client"` を付けた `HydrationCheck` と `ClientClock` だけです
+
+## Islands Architecture（`frameworks/astro-islands`）
+
+Astro 7.4 と Vue 3 で作った、別のプロジェクトです。動かし方と詳細は [frameworks/astro-islands/README.md](frameworks/astro-islands/README.md) にあります。
+
+- ページは静的な HTML のままにして、`client:load` や `client:visible` を付けた部品（島）だけをハイドレーションします
+- 島のないページの JS は 0 です。島のあるページでも、Vue の本体を含めて gzip 約31KB です
+- Next.js は、文章だけのページでも土台の JS（gzip 約174KB）を送ります。動く部品がほとんどないサイトなら、Islands の方が送る JS をずっと減らせます

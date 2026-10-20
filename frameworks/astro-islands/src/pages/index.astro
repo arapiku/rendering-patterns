@@ -1,0 +1,30 @@
+---
+import Counter from "../components/Counter.vue";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Islands Architecture">
+	<h1>Islands Architecture（Astro）</h1>
+	<p>
+		ページは静的な HTML のままにして、動く部品（島）だけを個別にハイドレーションします。
+		同じ Vue の部品を、ハイドレーションの指定だけ変えて3回置いています。
+	</p>
+
+	<section>
+		<h2>指定なし（島にしない）</h2>
+		<p>サーバーで HTML にするだけで、JS は送りません。ボタンは押しても反応しません。</p>
+		<Counter label="指定なし" />
+	</section>
+
+	<section>
+		<h2>client:load（読み込んだらすぐ島にする）</h2>
+		<p>ページを読み込んだら、すぐにこの部品の JS を取りに行ってハイドレーションします。</p>
+		<Counter label="client:load" client:load />
+	</section>
+
+	<section style="margin-top: 150vh">
+		<h2>client:visible（見えたら島にする）</h2>
+		<p>画面に入るまで、この部品の JS は取りに行きません。スクロールしてここまで来たときに読み込みます。</p>
+		<Counter label="client:visible" client:visible />
+	</section>
+</Layout>
